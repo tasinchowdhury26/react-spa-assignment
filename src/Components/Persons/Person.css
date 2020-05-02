@@ -1,0 +1,17 @@
+.person{
+    display: flex;
+    text-align: justify;
+    border-radius: 3px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: 5px 5px 25px lightgrey;
+}
+.button{
+    background-color: lightskyblue;
+    width: 180px;
+    height: 30px;
+    border: lightsteelblue;
+}
+.person-image{
+    padding: 20px;
+}
