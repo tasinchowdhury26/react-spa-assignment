@@ -5,7 +5,7 @@ import { faCoffee,faUserPlus } from '@fortawesome/free-solid-svg-icons'
 
 const Person = (props) => {
     const {name,email,annual_salary,id,img} = props.item;
-    console.log(props);
+    // console.log(props);
     return (
         <div className='person'>
             <div className="person-image">
@@ -14,9 +14,13 @@ const Person = (props) => {
             <div className="person-info">
                 <h4>Name : {name}</h4>
                 <p>Email : {email}</p>
-                <p>Annual Salary : {annual_salary}</p>
+                <p>Annual Salary :$ {annual_salary}</p>
                 <p>ID : {id}</p>
-                <button className='button' onClick={props.handler}><FontAwesomeIcon icon={faUserPlus} /></button>
+                <button 
+                    className='button' 
+                    onClick={() => props.handler(props.item)}>      
+                    <FontAwesomeIcon icon={faUserPlus} />
+                </button>
             </div>
         </div>
     );

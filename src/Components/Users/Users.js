@@ -6,9 +6,13 @@ import Counter from "../Counter/Counter";
 const Users = () => {
     const users = [...fakeData];
     const [user,setUser] = useState(users);
-    const [sum,setSum] = useState(0);
-    const handler = () =>{
-      console.log('Clicked');
+    const [names,setNames] = useState([]);
+    let [count,setCount] = useState([]);
+    const handler = (data) =>{
+      const newCount = [...count,data];
+      setCount(newCount);
+      let newNames = [...names,data.name];
+      setNames(newNames);
     }
     // console.log(fakeData);
   return (
@@ -19,8 +23,8 @@ const Users = () => {
         }
       </div>
       <div className="counter">
-        <h2>Number of users : {user.length}</h2>
-        <Counter></Counter>
+        <h3>Number of users : {user.length}</h3>
+        <Counter count={count} names={names}></Counter>
       </div>
     </div>
   );
